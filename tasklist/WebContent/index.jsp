@@ -3,9 +3,11 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import='java.io.*' %>
 <%@ page import='java.sql.*' %>
+
+<!-- Conexão com o banco de dados -->
 <%
 	Class.forName("com.mysql.jdbc.Driver");
-
+	
 	Connection connect = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/tasklist?user=root&password=123456");
 	
 	String nTask = request.getParameter("nTask");
@@ -24,6 +26,7 @@
 </head>
 <body>
 <div class="container">
+	<!-- Formulário de inserção da Task -->
 	<form action="#" method="post">
 	<%
 		if(nTask.equals("saveNew")){
@@ -54,6 +57,7 @@
 	
 		if(nTask.equals("newTask")){
 	%>
+		<!-- Listagem da Task -->
 		<fieldset style="padding-top:40px;">
 		
 		  <div class="form-group">
